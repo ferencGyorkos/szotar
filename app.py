@@ -21,7 +21,16 @@ def order_by(order):
         szotar = datamanager.list_words_english_asc()
     elif order == 'english-desc':
         szotar = datamanager.list_words_english_desc()
+    elif order == 'delete-word':
+        id = request.form['id']
+        datamanager.delete_word_by_id(id)
     return render_template("index.html", szotar=szotar)
+
+@app.route('/delete-word')
+def delete_by_id():
+    id = request.form['id']
+    datamanager.delete_word_by_id()
+    return redirect('/')
 
 
 @app.route('/add-word', methods=["POST", "GET"])

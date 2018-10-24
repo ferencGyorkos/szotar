@@ -58,6 +58,10 @@
             <tr>
                 <td>{{ item.magyar }}</td>
                 <td>{{ item.angol }}</td>
+                <td class="syia"><form method="post" action="/delete-word">
+                    <input type="button" value="Delete" >
+                    <input hidden name="id" value="{{ item.id }}">
+                </form></td>
             </tr>
         {% endfor %}
     {%  endif %}
