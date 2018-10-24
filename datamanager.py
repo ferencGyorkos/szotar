@@ -44,3 +44,8 @@ def list_words_english_desc(cursor):
     return cursor.fetchall()
 
 
+@connection.connection_handler
+def delete_word_by_id(cursor, id):
+    cursor.execute("""
+                    DELETE FROM szotar WHERE id = %(id)s;""",
+                   {'id': id})
