@@ -33,17 +33,17 @@
         <a class="dropdown-item" href="/english-desc">angol ZYX</a>
     </div>
 </div>
-<a href="add-word">új szó hozzáadása</a>
+<a href="add-word" type="button" class="btn btn-secondary dropdown-toggle">új szó hozzáadása</a>
 <br>
 <table>
     <tr>
         {% if request.path in ["/english-asc", "/english-desc"] %}
-            <th>angol</th>
-            <th id="magyarth">magyar</th>
+            <th>ANGOL</th>
+            <th id="magyarth">MAGYAR</th>
 
         {% else %}
-            <th id="magyarth">magyar</th>
-            <th>angol</th>
+            <th id="magyarth">MAGYAR</th>
+            <th>ANGOL</th>
         {% endif %}
     </tr>
     {% if request.path in ["/english-asc", "/english-desc"] %}
