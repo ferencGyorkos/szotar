@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    szotar = datamanager.list_words()
+    return render_template("index.html", szotar=szotar)
 
 
 @app.route('/add-word', methods=["POST", "GET"])

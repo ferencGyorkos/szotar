@@ -6,6 +6,18 @@
 </head>
 <body>
 <a href="add-word">új szó hozzáadása</a>
-
+<br>
+<table>
+    <tr>
+        <th id="magyarth">magyar</th>
+        <th>angol</th>
+    </tr>
+    {% for item in szotar %}
+        <tr>
+            <td>{{ item.angol }}</td>
+            <td>{{ item.magyar }}</td>
+        </tr>
+    {% endfor %}
+</table>
 </body>
 </html>
