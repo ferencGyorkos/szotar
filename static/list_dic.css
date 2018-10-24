@@ -24,3 +24,10 @@ th {
     color: white;
 }
 
+a {
+    display: inline;
+}
+
+div {
+    display: inline;
+}
