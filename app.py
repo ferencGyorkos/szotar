@@ -9,16 +9,16 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/add-word')
+@app.route('/add-word', methods=["POST", "GET"])
 def add_word():
     if request.method == 'POST':
         szotarpost = request.form.to_dict()
         print(szotarpost)
         datamanager.new_word(szotarpost['magyar'], szotarpost['angol'])
-        return render_template('index.html')
+        return redirect("/")
     else:
         return render_template("add_word.html")
 
 
 if __name__ == '__main__':
-    app.run(port=5200, debug=True)
+    app.run(port=5000, debug=True)
