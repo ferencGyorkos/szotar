@@ -37,15 +37,30 @@
 <br>
 <table>
     <tr>
-        <th>angol</th>
-        <th id="magyarth">magyar</th>
+        {% if request.path in ["/english-asc", "/english-desc"] %}
+            <th>angol</th>
+            <th id="magyarth">magyar</th>
+
+        {% else %}
+            <th id="magyarth">magyar</th>
+            <th>angol</th>
+        {% endif %}
     </tr>
-    {% for item in szotar %}
-        <tr>
-            <td>{{ item.angol }}</td>
-            <td>{{ item.magyar }}</td>
-        </tr>
-    {% endfor %}
+    {% if request.path in ["/english-asc", "/english-desc"] %}
+        {% for item in szotar %}
+            <tr>
+                <td>{{ item.angol }}</td>
+                <td>{{ item.magyar }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+                {% for item in szotar %}
+            <tr>
+                <td>{{ item.magyar }}</td>
+                <td>{{ item.angol }}</td>
+            </tr>
+        {% endfor %}
+    {%  endif %}
 </table>
 </body>
 </html>
