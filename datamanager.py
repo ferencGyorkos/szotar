@@ -11,7 +11,36 @@ def new_word(cursor, magyar, angol):
 
 @connection.connection_handler
 def list_words(cursor):
-    asdf = cursor.execute("""
+    cursor.execute("""
                       SELECT DISTINCT * FROM szotar""")
-    print(asdf)
     return cursor.fetchall()
+
+
+@connection.connection_handler
+def list_words_hungarian_asc(cursor):
+    cursor.execute("""
+                      SELECT DISTINCT * FROM szotar ORDER BY magyar ASC""")
+    return cursor.fetchall()
+
+
+@connection.connection_handler
+def list_words_hungarian_desc(cursor):
+    cursor.execute("""
+                      SELECT DISTINCT * FROM szotar ORDER BY magyar DESC""")
+    return cursor.fetchall()
+
+
+@connection.connection_handler
+def list_words_english_asc(cursor):
+    cursor.execute("""
+                      SELECT DISTINCT * FROM szotar ORDER BY angol ASC""")
+    return cursor.fetchall()
+
+
+@connection.connection_handler
+def list_words_english_desc(cursor):
+    cursor.execute("""
+                      SELECT DISTINCT * FROM szotar ORDER BY angol DESC""")
+    return cursor.fetchall()
+
+
