@@ -1,10 +1,8 @@
 
-
 table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-
 }
 
 td, th {
@@ -12,14 +10,18 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-tr:hover {background-color: #ddd;}
+tr:hover {
+    background-color: #ddd;
+}
 
 th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #314daf;
     color: white;
 }
@@ -36,27 +38,45 @@ input {
     padding: 8px 8px;
 }
 
+h1 {
+    font-size: 32px;
+    font-style: italic;
+}
+
 .nagy {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-size: 25px;
 }
 
 .syia {
     width: 1px;
     font-size: 10px;
 }
+
 .syia:hover {
     background-color: blue;
     color: white;
 }
+
 .syia:active {
-  background-color: #314daf;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #314daf;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .blue {
     background-color: #314daf;
     color: white;
 }
+
+.topnav input[type=text] {
+    float: right;
+    border: black;
+    border-collapse: collapse;
+    margin-right: 45px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
