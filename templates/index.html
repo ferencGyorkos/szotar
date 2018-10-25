@@ -15,10 +15,25 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"
             defer></script>
     <link rel="stylesheet" type="text/css" href="/static/list_dic.css">
+    <script>
+        window.onload = function () {
+            function makeBlue() {
+                console.log(this);
+                this.classList.add("blue");
+            }
+
+
+            // document.querySelector("#magyarth");
+            let allTd = document.querySelectorAll("td");
+            [].forEach.call(allTd, function (currentTd) {
+                currentTd.addEventListener("click", makeBlue)
+            })
+        }
+    </script>
 </head>
 <body>
 
-<h1>Welcome to Best dictinary!</h1>
+<h1>Welcome to Best dictionary!</h1>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle"
             type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -51,20 +66,28 @@
             <tr>
                 <td>{{ item.angol }}</td>
                 <td>{{ item.magyar }}</td>
+                <td class="syia">
+                    <form method="post" action="/delete-word">
+                        <input type="submit" value="x">
+                        <input hidden name="id" value="{{ item.id }}">
+                    </form>
+                </td>
             </tr>
         {% endfor %}
     {% else %}
-                {% for item in szotar %}
+        {% for item in szotar %}
             <tr>
                 <td>{{ item.magyar }}</td>
                 <td>{{ item.angol }}</td>
-                <td class="syia"><form method="post" action="/delete-word">
-                    <input type="submit" value="Delete" >
-                    <input hidden name="id" value="{{ item.id }}">
-                </form></td>
+                <td class="syia">
+                    <form method="post" action="/delete-word">
+                        <input type="submit" value="x">
+                        <input hidden name="id" value="{{ item.id }}">
+                    </form>
+                </td>
             </tr>
         {% endfor %}
-    {%  endif %}
+    {% endif %}
 </table>
 </body>
 </html>

@@ -33,11 +33,30 @@ div {
 }
 
 input {
+    padding: 8px 8px;
+}
+
+.nagy {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
 .syia {
-    width: 5px;
+    width: 1px;
+    font-size: 10px;
+}
+.syia:hover {
+    background-color: blue;
+    color: white;
+}
+.syia:active {
+  background-color: #314daf;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.blue {
+    background-color: #314daf;
+    color: white;
 }
